@@ -1,0 +1,49 @@
+<%= form_for([@myth.mythos, @myth]) do |f| %>
+  <% if @myth.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@myth.errors.count, "error") %> prohibited this myth from being saved:</h2>
+
+      <ul>
+      <% @myth.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :author %><br />
+    <%= f.text_field :author %>
+  </div>
+  <div class="field">
+    <%= f.label :year_started %><br />
+    <%= f.number_field :year_started %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </div>
+  <div class="field">
+    <%= f.label :is_approved %><br />
+    <%= f.check_box :is_approved %>
+  </div>
+  <div class="field">
+    <%= f.label :is_cannon %><br />
+    <%= f.check_box :is_cannon %>
+  </div>
+  <div class="field">
+    <%= f.label :up_vote %><br />
+    <%= f.number_field :up_vote %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,2 @@
+class Mytho < ApplicationRecord
+end

@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @myth.title %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%= @myth.author %>
+</p>
+
+<p>
+  <b>Year started:</b>
+  <%= @myth.year_started %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @myth.description %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @myth.body %>
+</p>
+
+<p>
+  <b>Is approved:</b>
+  <%= @myth.is_approved %>
+</p>
+
+<p>
+  <b>Is cannon:</b>
+  <%= @myth.is_cannon %>
+</p>
+
+<p>
+  <b>Up vote:</b>
+  <%= @myth.up_vote %>
+</p>
+
+
+<%= link_to 'Edit', edit_mythos_myth_path(@myth.mythos, @myth) %> |
+<%= link_to 'Back', mythos_myths_path(@myth.mythos) %>

@@ -1,0 +1,37 @@
+<h1>Listing gods</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Parent</th>
+    <th>Children</th>
+    <th>Attributes</th>
+    <th>Description</th>
+    <th>Is approved</th>
+    <th>Is cannon</th>
+    <th>Up vote</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @gods.each do |god| %>
+  <tr>
+    <td><%= god.title %></td>
+    <td><%= god.parent %></td>
+    <td><%= god.children %></td>
+    <td><%= god.attributes %></td>
+    <td><%= god.description %></td>
+    <td><%= god.is_approved %></td>
+    <td><%= god.is_cannon %></td>
+    <td><%= god.up_vote %></td>
+    <td><%= link_to 'Show', [god.mythos, god] %></td>
+    <td><%= link_to 'Edit', edit_mythos_god_path(god.mythos, god) %></td>
+    <td><%= link_to 'Destroy', [god.mythos, god], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New God', new_mythos_god_path(params[:mythos_id]) %>

@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @god.title %>
+</p>
+
+<p>
+  <b>Parent:</b>
+  <%= @god.parent %>
+</p>
+
+<p>
+  <b>Children:</b>
+  <%= @god.children %>
+</p>
+
+<p>
+  <b>Attributes:</b>
+  <%= @god.attributes %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @god.description %>
+</p>
+
+<p>
+  <b>Is approved:</b>
+  <%= @god.is_approved %>
+</p>
+
+<p>
+  <b>Is cannon:</b>
+  <%= @god.is_cannon %>
+</p>
+
+<p>
+  <b>Up vote:</b>
+  <%= @god.up_vote %>
+</p>
+
+
+<%= link_to 'Edit', edit_mythos_god_path(@god.mythos, @god) %> |
+<%= link_to 'Back', mythos_gods_path(@god.mythos) %>

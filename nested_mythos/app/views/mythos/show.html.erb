@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @mytho.title %>
+</p>
+
+<p>
+  <strong>Discription:</strong>
+  <%= @mytho.discription %>
+</p>
+
+<%= link_to 'Edit', edit_mytho_path(@mytho) %> |
+<%= link_to 'Back', mythos_path %>

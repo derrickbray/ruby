@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mythos: one
+  title: MyString
+  parent: MyString
+  children: MyString
+  attributes: MyText
+  description: MyText
+  is_approved: false
+  is_cannon: false
+  up_vote: 1
+
+two:
+  mythos: two
+  title: MyString
+  parent: MyString
+  children: MyString
+  attributes: MyText
+  description: MyText
+  is_approved: false
+  is_cannon: false
+  up_vote: 1
