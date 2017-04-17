@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @demi_god.name %>
+</p>
+
+<p>
+  <b>Parent:</b>
+  <%= @demi_god.parent %>
+</p>
+
+<p>
+  <b>Child:</b>
+  <%= @demi_god.child %>
+</p>
+
+<p>
+  <b>Attribute:</b>
+  <%= @demi_god.attribute %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @demi_god.description %>
+</p>
+
+<p>
+  <b>Is approved:</b>
+  <%= @demi_god.is_approved %>
+</p>
+
+<p>
+  <b>Is cannon:</b>
+  <%= @demi_god.is_cannon %>
+</p>
+
+<p>
+  <b>Up vote:</b>
+  <%= @demi_god.up_vote %>
+</p>
+
+<p>
+  <b>Universe:</b>
+  <%= @demi_god.universe %>
+</p>
+
+
+<%= link_to 'Edit', edit_universe_demi_god_path(@demi_god.universe, @demi_god) %> |
+<%= link_to 'Back', universe_demi_gods_path(@demi_god.universe) %>

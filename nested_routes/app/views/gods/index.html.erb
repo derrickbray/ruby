@@ -1,0 +1,39 @@
+<h1>Listing gods</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Parent</th>
+    <th>Child</th>
+    <th>Attribute</th>
+    <th>Description</th>
+    <th>Is approved</th>
+    <th>Is cannon</th>
+    <th>Up vote</th>
+    <th>Universe</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @gods.each do |god| %>
+  <tr>
+    <td><%= god.name %></td>
+    <td><%= god.parent %></td>
+    <td><%= god.child %></td>
+    <td><%= god.attribute %></td>
+    <td><%= god.description %></td>
+    <td><%= god.is_approved %></td>
+    <td><%= god.is_cannon %></td>
+    <td><%= god.up_vote %></td>
+    <td><%= god.universe %></td>
+    <td><%= link_to 'Show', [god.universe, god] %></td>
+    <td><%= link_to 'Edit', edit_universe_god_path(god.universe, god) %></td>
+    <td><%= link_to 'Destroy', [god.universe, god], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New God', new_universe_god_path(params[:universe_id]) %>

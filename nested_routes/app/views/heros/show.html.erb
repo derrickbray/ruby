@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @hero.name %>
+</p>
+
+<p>
+  <b>Parent:</b>
+  <%= @hero.parent %>
+</p>
+
+<p>
+  <b>Child:</b>
+  <%= @hero.child %>
+</p>
+
+<p>
+  <b>Attribute:</b>
+  <%= @hero.attribute %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @hero.description %>
+</p>
+
+<p>
+  <b>Is approved:</b>
+  <%= @hero.is_approved %>
+</p>
+
+<p>
+  <b>Is cannon:</b>
+  <%= @hero.is_cannon %>
+</p>
+
+<p>
+  <b>Up vote:</b>
+  <%= @hero.up_vote %>
+</p>
+
+<p>
+  <b>Universe:</b>
+  <%= @hero.universe %>
+</p>
+
+
+<%= link_to 'Edit', edit_universe_hero_path(@hero.universe, @hero) %> |
+<%= link_to 'Back', universe_heros_path(@hero.universe) %>

@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  universe: one
+  title: MyString
+  author: MyString
+  charactors: MyString
+  description: MyText
+  is_approved: false
+  is_cannon: false
+  up_vote: 1
+  universe: one
+
+two:
+  universe: two
+  title: MyString
+  author: MyString
+  charactors: MyString
+  description: MyText
+  is_approved: false
+  is_cannon: false
+  up_vote: 1
+  universe: two

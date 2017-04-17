@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  universe: one
+  name: MyString
+  parent: MyString
+  child: MyString
+  attribute: MyText
+  description: MyText
+  is_approved: false
+  is_cannon: false
+  up_vote: 1
+  universe: one
+
+two:
+  universe: two
+  name: MyString
+  parent: MyString
+  child: MyString
+  attribute: MyText
+  description: MyText
+  is_approved: false
+  is_cannon: false
+  up_vote: 1
+  universe: two

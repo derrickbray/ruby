@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @god.name %>
+</p>
+
+<p>
+  <b>Parent:</b>
+  <%= @god.parent %>
+</p>
+
+<p>
+  <b>Child:</b>
+  <%= @god.child %>
+</p>
+
+<p>
+  <b>Attribute:</b>
+  <%= @god.attribute %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @god.description %>
+</p>
+
+<p>
+  <b>Is approved:</b>
+  <%= @god.is_approved %>
+</p>
+
+<p>
+  <b>Is cannon:</b>
+  <%= @god.is_cannon %>
+</p>
+
+<p>
+  <b>Up vote:</b>
+  <%= @god.up_vote %>
+</p>
+
+<p>
+  <b>Universe:</b>
+  <%= @god.universe %>
+</p>
+
+
+<%= link_to 'Edit', edit_universe_god_path(@god.universe, @god) %> |
+<%= link_to 'Back', universe_gods_path(@god.universe) %>

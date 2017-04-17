@@ -1,0 +1,39 @@
+<h1>Listing heros</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Parent</th>
+    <th>Child</th>
+    <th>Attribute</th>
+    <th>Description</th>
+    <th>Is approved</th>
+    <th>Is cannon</th>
+    <th>Up vote</th>
+    <th>Universe</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @heros.each do |hero| %>
+  <tr>
+    <td><%= hero.name %></td>
+    <td><%= hero.parent %></td>
+    <td><%= hero.child %></td>
+    <td><%= hero.attribute %></td>
+    <td><%= hero.description %></td>
+    <td><%= hero.is_approved %></td>
+    <td><%= hero.is_cannon %></td>
+    <td><%= hero.up_vote %></td>
+    <td><%= hero.universe %></td>
+    <td><%= link_to 'Show', [hero.universe, hero] %></td>
+    <td><%= link_to 'Edit', edit_universe_hero_path(hero.universe, hero) %></td>
+    <td><%= link_to 'Destroy', [hero.universe, hero], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Hero', new_universe_hero_path(params[:universe_id]) %>

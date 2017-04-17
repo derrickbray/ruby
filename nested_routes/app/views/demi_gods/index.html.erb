@@ -1,0 +1,39 @@
+<h1>Listing demi_gods</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Parent</th>
+    <th>Child</th>
+    <th>Attribute</th>
+    <th>Description</th>
+    <th>Is approved</th>
+    <th>Is cannon</th>
+    <th>Up vote</th>
+    <th>Universe</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @demi_gods.each do |demi_god| %>
+  <tr>
+    <td><%= demi_god.name %></td>
+    <td><%= demi_god.parent %></td>
+    <td><%= demi_god.child %></td>
+    <td><%= demi_god.attribute %></td>
+    <td><%= demi_god.description %></td>
+    <td><%= demi_god.is_approved %></td>
+    <td><%= demi_god.is_cannon %></td>
+    <td><%= demi_god.up_vote %></td>
+    <td><%= demi_god.universe %></td>
+    <td><%= link_to 'Show', [demi_god.universe, demi_god] %></td>
+    <td><%= link_to 'Edit', edit_universe_demi_god_path(demi_god.universe, demi_god) %></td>
+    <td><%= link_to 'Destroy', [demi_god.universe, demi_god], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Demi god', new_universe_demi_god_path(params[:universe_id]) %>
