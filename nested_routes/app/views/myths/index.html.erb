@@ -24,7 +24,7 @@
     <td><%= myth.is_approved %></td>
     <td><%= myth.is_cannon %></td>
     <td><%= myth.up_vote %></td>
-    <td><%= myth.universe %></td>
+    <td><%= myth.universe.title %></td>
     <td><%= link_to 'Show', [myth.universe, myth] %></td>
     <td><%= link_to 'Edit', edit_universe_myth_path(myth.universe, myth) %></td>
     <td><%= link_to 'Destroy', [myth.universe, myth], :confirm => 'Are you sure?', :method => :delete %></td>

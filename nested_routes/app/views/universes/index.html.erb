@@ -1,33 +1,37 @@
-<p id="notice"><%= notice %></p>
-
 <div class="hero">
-  <div class="hero-box">
-    <div class="hero__title">MYTHOS</div>
-    <div class="hero__tag">Create Your Own Universe</div>
-  </div>
+    <div class="hero-box">
+        <div class="hero__title">MYTHOS</div>
+        <div class="hero__tag">Create Your Own Universe</div>
+    </div>
 </div>
 
-<div class="page">
+<section class="main">
+    <h1 class="title">Read, Create, or Add to Universes</h1>
 
-  <div class="side-nav">
-    <%= link_to 'New Universe', new_universe_path %>
-  </div>
+    <p id="notice"><%= notice %></p>
 
+    <div class="flex">
 
-  <h1>Universes</h1>
+        <div class="container">
+            <div class="side-nav">
+                <%= link_to 'New Universe', new_universe_path %>
+            </div>
 
-    <div class="card">
-      <% @universes.each do |universe| %>
+            <div class="card">
+                <% @universes.each do |universe| %>
 
-          <div><%= universe.title %></div>
-          <div><%= universe.author %></div>
-          <div><%= universe.description %></div>
-          <div class="button-box">
-            <div><%= link_to 'Show', universe %></div>
-            <div><%= link_to 'Edit', edit_universe_path(universe) %></div>
-            <div><%= link_to 'Destroy', universe, method: :delete, data: { confirm: 'Are you sure?' } %></div>
-          </div>
+                <div><%= universe.title %></div>
+                <div>Created By:
+                    <%= universe.author %></div>
+                <div><%= universe.description %></div>
+                <div class="button-box">
+                    <div><%= link_to 'Show', universe %></div>
+                    <div><%= link_to 'Edit', edit_universe_path(universe) %></div>
+                    <div><%= link_to 'Destroy', universe, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+                </div>
 
-      <% end %>
+                <% end %>
+            </div>
+        </div>
     </div>
-  </div>
+</section>

@@ -59,6 +59,6 @@ class MythsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def myth_params
-      params.require(:myth).permit(:title, :author, :charactors, :description, :is_approved, :is_cannon, :up_vote, :universe_id)
+      params.require(:myth).permit(:title, :author, :charactors, :body, :description, :is_approved, :is_cannon, :up_vote, :universe_id)
     end
 end

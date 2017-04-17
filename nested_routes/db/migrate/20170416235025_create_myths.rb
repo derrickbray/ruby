@@ -6,6 +6,7 @@ class CreateMyths < ActiveRecord::Migration[5.0]
       t.string :author
       t.string :charactors
       t.text :description
+      t.text :body
       t.boolean :is_approved
       t.boolean :is_cannon
       t.integer :up_vote

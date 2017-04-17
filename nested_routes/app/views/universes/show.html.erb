@@ -17,6 +17,8 @@
 
 <%= link_to 'Edit', edit_universe_path(@universe) %> |
 <%= link_to 'Back', universes_path %> |
+<%= link_to 'Destroy', @universe, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'Myths', universe_myths_path(@universe, @myths) %> |
 <%= link_to 'gods', universe_gods_path(@universe, @gods) %> |
 <%= link_to 'demi-gods', universe_demi_gods_path(@universe, @demi_gods) %> |
 <%= link_to 'heroes', universe_heros_path(@universe, @heros) %>
