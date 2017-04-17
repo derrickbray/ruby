@@ -1,31 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Universes</h1>
+<div class="hero">
+  <div class="hero-box">
+    <div class="hero__title">MYTHOS</div>
+    <div class="hero__tag">Create Your Own Universe</div>
+  </div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Author</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="page">
 
-  <tbody>
-    <% @universes.each do |universe| %>
-      <tr>
-        <td><%= universe.title %></td>
-        <td><%= universe.author %></td>
-        <td><%= universe.description %></td>
-        <td><%= link_to 'Show', universe %></td>
-        <td><%= link_to 'Edit', edit_universe_path(universe) %></td>
-        <td><%= link_to 'Destroy', universe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <div class="side-nav">
+    <%= link_to 'New Universe', new_universe_path %>
+  </div>
 
-<br>
 
-<%= link_to 'New Universe', new_universe_path %>
+  <h1>Universes</h1>
+
+    <div class="card">
+      <% @universes.each do |universe| %>
+
+          <div><%= universe.title %></div>
+          <div><%= universe.author %></div>
+          <div><%= universe.description %></div>
+          <div class="button-box">
+            <div><%= link_to 'Show', universe %></div>
+            <div><%= link_to 'Edit', edit_universe_path(universe) %></div>
+            <div><%= link_to 'Destroy', universe, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+          </div>
+
+      <% end %>
+    </div>
+  </div>
