@@ -29,13 +29,14 @@ a {
 }
 
 .nav {
-  background: blue;
+  background: #704241;
 
   &-content {
     display: flex;
     justify-content: space-between;
     padding: 2rem 0;
     font-size: 2rem;
+    font-family: 'Dosis', sans-serif;
 
     a {
       color: white;
