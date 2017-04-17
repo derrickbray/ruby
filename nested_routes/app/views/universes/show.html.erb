@@ -16,4 +16,7 @@
 </p>
 
 <%= link_to 'Edit', edit_universe_path(@universe) %> |
-<%= link_to 'Back', universes_path %>
+<%= link_to 'Back', universes_path %> |
+<%= link_to 'gods', universe_gods_path(@universe, @gods) %> |
+<%= link_to 'demi-gods', universe_demi_gods_path(@universe, @demi_gods) %> |
+<%= link_to 'heroes', universe_heros_path(@universe, @heros) %>
