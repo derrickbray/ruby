@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>NestedRoutes</title>
+    <title>Expanded Mythos</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,14 @@
   </head>
 
   <body>
+    <div class="nav">
+      <div class="container">
+        <div class="nav-content">
+          <%= link_to 'Mythos', root_path %>
+          <%= link_to 'Browse', universes_path %>
+        </div>
+      </div>
+    </div>
     <%= yield %>
   </body>
 </html>
