@@ -23,6 +23,44 @@
   }
 }
 
+.about {
+  padding: 3rem 0;
+  color: #704241;
+
+  &-content {
+    padding: 1rem;
+    border: 1px solid #704241;
+    border-radius: 0.4rem;
+
+    &__title {
+      text-align: center;
+      font-size: 3rem;
+      font-family: 'Dosis', sans-serif;
+    }
+    &__description {
+      padding: 2rem;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  }
+}
+
+.new-link {
+  padding: 0.5rem;
+  text-align: center;
+  border: 1px solid #704241;
+  border-radius: 0.4rem;
+
+  &:hover {
+    border: 3px solid #704241;
+  }
+
+  a {
+    color: #704241;
+    font-size: 1.5rem;
+  }
+}
+
 .title {
   text-align: center;
   color: white;
@@ -31,12 +69,21 @@
 }
 
 .main {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  height: 90vh;
   padding-top: 3rem;
-  background: #704241;
+  background-image: url('/images/circles.jpg');
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
 }
 
-.new-link {}
 
 .card {}
 
-.button-box {}
+.button-box {
+  display: flex;
+  justify-content: space-around;
+}

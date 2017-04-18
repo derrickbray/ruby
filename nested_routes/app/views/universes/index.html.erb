@@ -1,25 +1,35 @@
 <div class="hero">
-    <div class="hero-box">
-        <div class="hero__title">MYTHOS</div>
-        <div class="hero__tag">Create Your Own Universe</div>
-    </div>
+  <div class="hero-box">
+      <div class="hero__title">MYTHOS</div>
+      <div class="hero__tag">Create Your Own Universe</div>
+  </div>
 </div>
 
 <section class="about">
-  <h1 class="about__title">What is Mythos?</h1>
-  <div class="about__description"></div>
+  <div class="container">
+    <div class="about-content">
+      <h1 class="about-content__title">What is Mythos?</h1>
+      <div class="about-content__description">Mythos is an open source application where anyone can create their own mythology.  If you want to build a pantheon similar to the Greeks or Vikings, do it.  Once you create your Universe add individual Myths with Gods, Demi-Gods, and Heroes.  If you want you can also add Myths to other Universes.  So keep an open mind and have fun.</div>
+      <div class="button-box">
+        <div class="new-link">
+          <%= link_to 'Build a New Universe', new_universe_path %>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>
 
 <section class="main">
-    <h1 class="title">Read, Create, or Add to Universes</h1>
 
-    <p id="notice"><%= notice %></p>
+    <h1 class="title">Read, Create, or Add to Universes</h1>
+    <!-- <div class="title">Check out the Universes Below</div> -->
+
+</section>
 
     <div class="container">
-        <div class="new-link">
-            <%= link_to 'Build a New Universe', new_universe_path %>
-        </div>
 
+      <p id="notice"><%= notice %></p>
         <% @universes.each do |universe| %>
         <div class="card">
 
@@ -37,4 +47,3 @@
         </div>
         <% end %>
     </div>
-</section>
