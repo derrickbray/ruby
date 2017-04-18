@@ -5,33 +5,36 @@
     </div>
 </div>
 
+<section class="about">
+  <h1 class="about__title">What is Mythos?</h1>
+  <div class="about__description"></div>
+</section>
+
 <section class="main">
     <h1 class="title">Read, Create, or Add to Universes</h1>
 
     <p id="notice"><%= notice %></p>
 
-    <div class="flex">
-
-        <div class="container">
-            <div class="side-nav">
-                <%= link_to 'New Universe', new_universe_path %>
-            </div>
-
-            <div class="card">
-                <% @universes.each do |universe| %>
-
-                <div><%= universe.title %></div>
-                <div>Created By:
-                    <%= universe.author %></div>
-                <div><%= universe.description %></div>
-                <div class="button-box">
-                    <div><%= link_to 'Show', universe %></div>
-                    <div><%= link_to 'Edit', edit_universe_path(universe) %></div>
-                    <div><%= link_to 'Destroy', universe, method: :delete, data: { confirm: 'Are you sure?' } %></div>
-                </div>
-
-                <% end %>
-            </div>
+    <div class="container">
+        <div class="new-link">
+            <%= link_to 'Build a New Universe', new_universe_path %>
         </div>
+
+        <% @universes.each do |universe| %>
+        <div class="card">
+
+            <div><%= universe.title %></div>
+            <div>Created By:
+                <%= universe.author %></div>
+            <div><%= universe.description %></div>
+
+            <div class="button-box">
+                <div><%= link_to 'More Detail', universe %></div>
+                <div><%= link_to 'Edit', edit_universe_path(universe) %></div>
+                <div><%= link_to 'Destroy', universe, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+            </div>
+
+        </div>
+        <% end %>
     </div>
 </section>
