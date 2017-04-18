@@ -1,32 +1,47 @@
 <%= form_for(universe) do |f| %>
-  <% if universe.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(universe.errors.count, "error") %> prohibited this universe from being saved:</h2>
+<% if universe.errors.any? %>
+<div id="error_explanation">
+    <h2><%= pluralize(universe.errors.count, "error") %>
+        prohibited this universe from being saved:</h2>
 
-      <ul>
-      <% universe.errors.full_messages.each do |message| %>
+    <ul>
+        <% universe.errors.full_messages.each do |message| %>
         <li><%= message %></li>
-      <% end %>
-      </ul>
+        <% end %>
+    </ul>
+</div>
+<% end %>
+
+<div class="container">
+    <div class="card">
+
+        <div class="card-content">
+
+            <div class="card__form">
+                <%= f.label :title %>
+                <%= f.text_field :title, class: 'card__form-string' %>
+            </div>
+
+            <div class="card__form">
+                <%= f.label :author %>
+                <%= f.text_field :author, class: 'card__form-string' %>
+            </div>
+
+            <div class="card__form">
+                <%= f.label :description %>
+                <%= f.text_area :description, class: 'card__form-text' %>
+            </div>
+
+            <div class="button-box">
+                <%= f.submit class:'new-link' %>
+                <div class="new-link">
+                    <%= link_to 'Back', universes_path %>
+                </div>
+            </div>
+
+        </div>
+
     </div>
-  <% end %>
+</div>
 
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= f.label :author %>
-    <%= f.text_field :author %>
-  </div>
-
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
