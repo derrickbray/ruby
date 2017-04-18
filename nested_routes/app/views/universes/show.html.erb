@@ -1,24 +1,28 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+    <div class="card">
+        <div class="card-content">
+            <div class="card-content__title">
+              <%= @universe.title %>
+            </div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @universe.title %>
-</p>
+            <div class="card-content__item">Author:
+              <%= @universe.author %>
+            </div>
 
-<p>
-  <strong>Author:</strong>
-  <%= @universe.author %>
-</p>
+            <div class="card-content__text">
+              <%= @universe.description %>
+            </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @universe.description %>
-</p>
+            <div class="button-box">
+                <div class="new-link"><%= link_to 'Edit', edit_universe_path(@universe) %></div>
+                <!-- <div class="new-link"><%= link_to 'Destroy', @universe, method: :delete, data: { confirm: 'Are you sure?' } %></div> -->
+                <div class="new-link"><%= link_to 'Myths', universe_myths_path(@universe, @myths) %></div>
+                <div class="new-link"><%= link_to 'Gods', universe_gods_path(@universe, @gods) %></div>
+                <div class="new-link"><%= link_to 'Demi-Gods', universe_demi_gods_path(@universe, @demi_gods) %></div>
+                <div class="new-link"><%= link_to 'Heroes', universe_heros_path(@universe, @heros) %></div>
+                <div class="new-link"><%= link_to 'Back', universes_path %></div>
 
-<%= link_to 'Edit', edit_universe_path(@universe) %> |
-<%= link_to 'Back', universes_path %> |
-<%= link_to 'Destroy', @universe, method: :delete, data: { confirm: 'Are you sure?' } %> |
-<%= link_to 'Myths', universe_myths_path(@universe, @myths) %> |
-<%= link_to 'gods', universe_gods_path(@universe, @gods) %> |
-<%= link_to 'demi-gods', universe_demi_gods_path(@universe, @demi_gods) %> |
-<%= link_to 'heroes', universe_heros_path(@universe, @heros) %>
+            </div>
+        </div>
+    </div>
+</div>

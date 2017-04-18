@@ -80,31 +80,6 @@
   font-family: 'Dosis', sans-serif;
 }
 
-.main {
-  display: flex;
-  justify-content: flex-end;
-  flex-direction: column;
-  height: 90vh;
-  padding-top: 3rem;
-  background-image: url('/images/circles.jpg');
-  background-size: cover;
-  background-position: bottom;
-  background-repeat: no-repeat;
-}
-
-.new {
-  display: flex;
-  justify-content: flex-end;
-  flex-direction: column;
-  height: 70vh;
-  padding-top: 3rem;
-  background-image: url('/images/slot-canyon.jpg');
-  background-size: cover;
-  background-position: bottom;
-  background-repeat: no-repeat;
-  text-align: right;
-}
-
 
 .card {
   margin: 3rem 0;

@@ -1,37 +1,30 @@
-<h1>Listing myths</h1>
+    <div class="myth-hero">
+      <h1 class="title">The Myths of <%= @universe.title %></h1>
+    </div>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Author</th>
-    <th>Charactors</th>
-    <th>Description</th>
-    <th>Is approved</th>
-    <th>Is cannon</th>
-    <th>Up vote</th>
-    <th>Universe</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="container">
+  <% @myths.each do |myth| %>
+    <div class="card">
 
-<% @myths.each do |myth| %>
-  <tr>
-    <td><%= myth.title %></td>
-    <td><%= myth.author %></td>
-    <td><%= myth.charactors %></td>
-    <td><%= myth.description %></td>
-    <td><%= myth.is_approved %></td>
-    <td><%= myth.is_cannon %></td>
-    <td><%= myth.up_vote %></td>
-    <td><%= myth.universe.title %></td>
-    <td><%= link_to 'Show', [myth.universe, myth] %></td>
-    <td><%= link_to 'Edit', edit_universe_myth_path(myth.universe, myth) %></td>
-    <td><%= link_to 'Destroy', [myth.universe, myth], :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+        <div class="card-content">
+            <div class="card-content__title"><%= myth.title %></div>
+            <div class="card-content__item">Created By: <%= myth.author %></div>
+            <div class="card-content__item">Charactors: <%= myth.charactors %></div>
+            <!-- <div class="card-content__item">Approved: <%= myth.is_approved %></div> -->
+            <div class="card-content__item">Cannon: <%= myth.is_cannon %></div>
+            <div class="card-content__item">Vote: <%= myth.up_vote %></div>
+            <div class="card-content__item">Universe: <%= myth.universe.title %></div>
+            <div class="card-content__text"><%= myth.description %></div>
 
-<br />
+            <div class="button-box">
+                <!-- <div class="new-link"><%= link_to 'Show', [myth.universe, myth] %></div> -->
+                <div class="new-link"><%= link_to 'New Myth', new_universe_myth_path(params[:universe_id]) %></div>
+                <div class="new-link"><%= link_to 'Edit', edit_universe_myth_path(myth.universe, myth) %></div>
+                <div class="new-link"><%= link_to 'Destroy', [myth.universe, myth], :confirm => 'Are you sure?', :method => :delete %></div>
+            </div>
 
-<%= link_to 'New Myth', new_universe_myth_path(params[:universe_id]) %>
+        </div>
+
+    </div>
+  <% end %>
+</div>
