@@ -1,7 +1,9 @@
 <div class="hero">
-  <div class="hero-box">
-      <div class="hero__title">MYTHOS</div>
-      <div class="hero__tag">Create Your Own Universe</div>
+  <div class="container">
+      <div class="hero-box">
+        <div class="hero__title">MYTHOS</div>
+        <div class="hero__tag">Create Your Own Universe</div>
+      </div>
   </div>
 </div>
 
@@ -30,20 +32,28 @@
     <div class="container">
 
       <p id="notice"><%= notice %></p>
-        <% @universes.each do |universe| %>
-        <div class="card">
+      <% @universes.each do |universe| %>
 
-            <div><%= universe.title %></div>
-            <div>Created By:
-                <%= universe.author %></div>
-            <div><%= universe.description %></div>
+      <div class="card">
 
-            <div class="button-box">
+        <div class="card-content">
+          <div class="card-content__title"><%= universe.title %></div>
+          <div class="card-content__item">Created By: <%= universe.author %></div>
+          <div class="card-content__text"><%= universe.description %></div>
+
+          <div class="button-box">
+              <div class="new-link">
                 <div><%= link_to 'More Detail', universe %></div>
+              </div>
+              <div class="new-link">
                 <div><%= link_to 'Edit', edit_universe_path(universe) %></div>
+              </div>
+              <!-- <div class="new-link">
                 <div><%= link_to 'Destroy', universe, method: :delete, data: { confirm: 'Are you sure?' } %></div>
-            </div>
-
+              </div> -->
+          </div>
         </div>
-        <% end %>
+
+      </div>
+      <% end %>
     </div>

@@ -1,6 +1,4 @@
 .hero {
-  display: flex;
-  align-items: center;
   height: 90vh;
   background-image: url('/images/thumb.jpg');
   background-size: cover;
@@ -8,7 +6,10 @@
   background-repeat: no-repeat;
 
   &-box {
-    padding-left: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 90vh;
   }
 
   &__title {
@@ -25,21 +26,22 @@
 
 .about {
   padding: 3rem 0;
-  color: #704241;
+  color: white;
 
   &-content {
+    background: #704241;
     padding: 1rem;
     border: 1px solid #704241;
     border-radius: 0.4rem;
+    font-family: 'Dosis', sans-serif;
 
     &__title {
       text-align: center;
       font-size: 3rem;
-      font-family: 'Dosis', sans-serif;
     }
     &__description {
       padding: 2rem;
-      font-size: 1.5rem;
+      font-size: 2rem;
       text-align: center;
     }
   }
@@ -48,15 +50,15 @@
 .new-link {
   padding: 0.5rem;
   text-align: center;
-  border: 1px solid #704241;
+  border: 1px solid white;
   border-radius: 0.4rem;
 
   &:hover {
-    border: 3px solid #704241;
+    border: 1px solid #704241;
   }
 
   a {
-    color: #704241;
+    color: white;
     font-size: 1.5rem;
   }
 }
@@ -81,7 +83,29 @@
 }
 
 
-.card {}
+.card {
+  margin: 3rem 0;
+  padding: 1rem;
+  border-radius: 0.4rem;
+  background: #704241;
+  color: white;
+  font-family: 'Dosis', sans-serif;
+
+  &-content {
+    text-align: center;
+
+    &__title {
+      // text-align: center;
+      font-size: 3rem;
+    }
+    &__item {
+      // text-align: center;
+    }
+    &__text {
+      font-size: 2rem;
+    }
+  }
+}
 
 .button-box {
   display: flex;
