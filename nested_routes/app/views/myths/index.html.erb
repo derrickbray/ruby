@@ -1,24 +1,47 @@
-    <div class="myth-hero">
-      <h1 class="title">The Myths of <%= @universe.title %></h1>
+<div class="myth-hero">
+    <h1 class="title">The Myths of
+        <%= @universe.title %></h1>
+</div>
+
+<section class="about">
+    <div class="container">
+        <div class="about-content">
+            <h1 class="about-content__title">Myths</h1>
+            <div class="about-content__description">Here you can create new Myths in your chosen Universe. Scroll down and see what other myths are here.
+            </div>
+            <div class="button-box">
+              <div class="new-link"><%= link_to 'Create New Myth', new_universe_myth_path(params[:universe_id]) %></div>
+            </div>
+
+        </div>
     </div>
+</section>
+
+<div class="myth-hero2">
+  <h1 class="title-right">Existing Myths</h1>
+</div>
 
 <div class="container">
-  <% @myths.each do |myth| %>
+    <% @myths.each do |myth| %>
     <div class="card">
 
         <div class="card-content">
             <div class="card-content__title"><%= myth.title %></div>
-            <div class="card-content__item">Created By: <%= myth.author %></div>
-            <div class="card-content__item">Charactors: <%= myth.charactors %></div>
+            <div class="card-content__item">Created By:
+                <%= myth.author %></div>
+            <div class="card-content__item">Charactors:
+                <%= myth.charactors %></div>
             <!-- <div class="card-content__item">Approved: <%= myth.is_approved %></div> -->
-            <div class="card-content__item">Cannon: <%= myth.is_cannon %></div>
-            <div class="card-content__item">Vote: <%= myth.up_vote %></div>
-            <div class="card-content__item">Universe: <%= myth.universe.title %></div>
+            <div class="card-content__item">Cannon:
+                <%= myth.is_cannon %></div>
+            <div class="card-content__item">Vote:
+                <%= myth.up_vote %></div>
+            <div class="card-content__item">Universe:
+                <%= myth.universe.title %></div>
             <div class="card-content__text"><%= myth.description %></div>
 
             <div class="button-box">
                 <!-- <div class="new-link"><%= link_to 'Show', [myth.universe, myth] %></div> -->
-                <div class="new-link"><%= link_to 'New Myth', new_universe_myth_path(params[:universe_id]) %></div>
                 <div class="new-link"><%= link_to 'Edit', edit_universe_myth_path(myth.universe, myth) %></div>
                 <div class="new-link"><%= link_to 'Destroy', [myth.universe, myth], :confirm => 'Are you sure?', :method => :delete %></div>
             </div>
@@ -26,5 +49,5 @@
         </div>
 
     </div>
-  <% end %>
+    <% end %>
 </div>

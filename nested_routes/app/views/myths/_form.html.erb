@@ -1,49 +1,59 @@
 <%= form_for([@myth.universe, @myth]) do |f| %>
-  <% if @myth.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@myth.errors.count, "error") %> prohibited this myth from being saved:</h2>
+<% if @myth.errors.any? %>
+<div id="error_explanation">
+    <h2><%= pluralize(@myth.errors.count, "error") %>
+        prohibited this myth from being saved:</h2>
 
-      <ul>
-      <% @myth.errors.full_messages.each do |msg| %>
+    <ul>
+        <% @myth.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+        <% end %>
+    </ul>
+</div>
+<% end %>
 
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :author %><br />
-    <%= f.text_field :author %>
-  </div>
-  <div class="field">
-    <%= f.label :charactors %><br />
-    <%= f.text_field :charactors %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :is_approved %><br />
-    <%= f.check_box :is_approved %>
-  </div>
-  <div class="field">
-    <%= f.label :is_cannon %><br />
-    <%= f.check_box :is_cannon %>
-  </div>
-  <div class="field">
-    <%= f.label :up_vote %><br />
-    <%= f.number_field :up_vote %>
-  </div>
-  <!-- <div class="field">
-    <%= f.label :universe %><br />
-    <%= f.text_field :universe %>
-  </div> -->
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<div class="container">
+    <div class="card">
+        <div class="card-content">
+
+            <div class="card-form">
+                <%= f.label :title %>
+                <%= f.text_field :title, class: 'card__form-string' %>
+            </div>
+            <div class="card-form">
+                <%= f.label :author %>
+                <%= f.text_field :author, class: 'card__form-string' %>
+            </div>
+            <div class="card-form">
+                <%= f.label :charactors %>
+                <%= f.text_field :charactors, class: 'card__form-string' %>
+            </div>
+            <div class="card-form">
+                <%= f.label :description %>
+                <%= f.text_area :description, class: 'card__form-text' %>
+            </div>
+            <div class="card-form">
+              <%= f.label :up_vote %>
+              <%= f.number_field :up_vote, class: 'card__form-string' %>
+            </div>
+            <div class="card-form">
+                <%= f.label :is_approved %>
+                <%= f.check_box :is_approved, class: 'card__form-checkbox' %>
+            </div>
+            <div class="card-form">
+                <%= f.label :is_cannon %>
+                <%= f.check_box :is_cannon, class: 'card__form-checkbox' %>
+            </div>
+            <!-- <div class="field">
+        <%= f.label :universe %><br />
+        <%= f.text_field :universe %>
+            </div> -->
+            <div class="button-box">
+                <%= f.submit class:'new-link' %>
+                <%= link_to 'Back', universe_myths_path(@myth.universe) , class:'new-link' %>
+            </div>
+
+        </div>
+    </div>
+</div>
 <% end %>
