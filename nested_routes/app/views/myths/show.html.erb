@@ -1,45 +1,20 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %>
 
-<p>
-  <b>Title:</b>
-  <%= @myth.title %>
-</p>
-
-<p>
-  <b>Author:</b>
-  <%= @myth.author %>
-</p>
-
-<p>
-  <b>Charactors:</b>
-  <%= @myth.charactors %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @myth.description %>
-</p>
-
-<p>
-  <b>Is approved:</b>
-  <%= @myth.is_approved %>
-</p>
-
-<p>
-  <b>Is cannon:</b>
-  <%= @myth.is_cannon %>
-</p>
-
-<p>
-  <b>Up vote:</b>
-  <%= @myth.up_vote %>
-</p>
-
-<p>
-  <b>Universe:</b>
-  <%= @myth.universe.title %>
-</p>
-
-
-<%= link_to 'Edit', edit_universe_myth_path(@myth.universe, @myth) %> |
-<%= link_to 'Back', universe_myths_path(@myth.universe) %>
+    <div class="container">
+        <div class="card">
+            <div class="card-content">
+              <div class="card-content__title"><%= @myth.universe.title %></div>
+                <div class="card-content__title"><%= @myth.title %></div>
+                <div class="card-content__item">By: <%= @myth.author %></div>
+                <div class="card-content__item">Charactors: <%= @myth.charactors %></div>
+                <div class="card-content__checkbox">Cannon: <%= @myth.is_cannon %></div>
+                <div class="card-content__checkbox">Votes: <%= @myth.up_vote %></div>
+                <div class="card-content__text"><%= @myth.description %></div>
+                <!-- <div class="card-content__checkbox"><%= @myth.is_approved %></div> -->
+                <div class="button-box">
+                    <%= link_to 'Edit Again', edit_universe_myth_path(@myth.universe, @myth), class:'new-link' %>
+                    <%= link_to 'Back', universe_myths_path(@myth.universe), class:'new-link' %>
+                </div>
+            </div>
+        </div>
+    </div>
