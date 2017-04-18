@@ -21,12 +21,12 @@
     <td><%= hero.name %></td>
     <td><%= hero.parent %></td>
     <td><%= hero.child %></td>
-    <td><%= hero.attribute %></td>
+    <!-- <td><%= hero.attributes %></td> -->
     <td><%= hero.description %></td>
     <td><%= hero.is_approved %></td>
     <td><%= hero.is_cannon %></td>
     <td><%= hero.up_vote %></td>
-    <td><%= hero.universe %></td>
+    <td><%= hero.universe.title %></td>
     <td><%= link_to 'Show', [hero.universe, hero] %></td>
     <td><%= link_to 'Edit', edit_universe_hero_path(hero.universe, hero) %></td>
     <td><%= link_to 'Destroy', [hero.universe, hero], :confirm => 'Are you sure?', :method => :delete %></td>

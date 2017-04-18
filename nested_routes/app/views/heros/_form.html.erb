@@ -11,43 +11,49 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+  <div class="container">
+      <div class="card">
+          <div class="card-content">
+
+              <div class="card-form">
+                <%= f.label :name %>
+                <%= f.text_field :name, class: 'card__form-string' %>
+              </div>
+              <div class="card-form">
+                <%= f.label :parent %>
+                <%= f.text_field :parent, class: 'card__form-string' %>
+              </div>
+              <div class="card-form">
+                <%= f.label :child %>
+                <%= f.text_field :child, class: 'card__form-string' %>
+              </div>
+              <!-- <div class="card-form">
+                <%= f.label :attributes %>
+                <%= f.text_area :attributes, class: 'card__form-text' %>
+              </div> -->
+              <div class="card-form">
+                  <%= f.label :description %>
+                  <%= f.text_area :description, class: 'card__form-text' %>
+              </div>
+              <div class="card-form">
+                <%= f.label :up_vote %>
+                <%= f.number_field :up_vote, class: 'card__form-string' %>
+              </div>
+              <div class="card-form">
+                  <%= f.label :is_approved %>
+                  <%= f.check_box :is_approved, class: 'card__form-checkbox' %>
+              </div>
+              <div class="card-form">
+                  <%= f.label :is_cannon %>
+                  <%= f.check_box :is_cannon, class: 'card__form-checkbox' %>
+              </div>
+              <div class="button-box">
+                  <%= f.submit class:'new-link' %>
+                  <%= link_to 'Back', universe_heros_path(@hero.universe) , class:'new-link' %>
+              </div>
+
+          </div>
+      </div>
   </div>
-  <div class="field">
-    <%= f.label :parent %><br />
-    <%= f.text_field :parent %>
-  </div>
-  <div class="field">
-    <%= f.label :child %><br />
-    <%= f.text_field :child %>
-  </div>
-  <div class="field">
-    <%= f.label :attribute %><br />
-    <%= f.text_area :attribute %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :is_approved %><br />
-    <%= f.check_box :is_approved %>
-  </div>
-  <div class="field">
-    <%= f.label :is_cannon %><br />
-    <%= f.check_box :is_cannon %>
-  </div>
-  <div class="field">
-    <%= f.label :up_vote %><br />
-    <%= f.number_field :up_vote %>
-  </div>
-  <div class="field">
-    <%= f.label :universe %><br />
-    <%= f.text_field :universe %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
 <% end %>
