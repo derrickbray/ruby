@@ -1,40 +1,35 @@
-<h1>Listing heros</h1>
+<div class="hero-hero">
+  <h1 class="title-right">The Heroes of <%= @universe.title %></h1>
+</div>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Parent</th>
-    <th>Child</th>
-    <th>Attribute</th>
-    <th>Description</th>
-    <th>Is approved</th>
-    <th>Is cannon</th>
-    <th>Up vote</th>
-    <th>Universe</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+
+<section class="about">
+    <div class="container">
+        <div class="about-content">
+            <h1 class="about-content__title">Heroes</h1>
+            <div class="about-content__description">Here you can create new Heroes in your chosen Universe. Scroll down and see what other heroes are here.
+            </div>
+            <div class="button-box">
+              <div class="new-link"><%= link_to 'New Hero', new_universe_hero_path(params[:universe_id]) %></div>
+              <div class="new-link"><%= link_to 'Back to Universe Page', universe_path(params[:universe_id]) %></div>
+            </div>
+
+        </div>
+    </div>
+</section>
 
 <% @heros.each do |hero| %>
-  <tr>
-    <td><%= hero.name %></td>
-    <td><%= hero.parent %></td>
-    <td><%= hero.child %></td>
-    <!-- <td><%= hero.attributes %></td> -->
-    <td><%= hero.description %></td>
-    <td><%= hero.is_approved %></td>
-    <td><%= hero.is_cannon %></td>
-    <td><%= hero.up_vote %></td>
-    <td><%= hero.universe.title %></td>
-    <td><%= link_to 'Show', [hero.universe, hero] %></td>
-    <td><%= link_to 'Edit', edit_universe_hero_path(hero.universe, hero) %></td>
-    <td><%= link_to 'Destroy', [hero.universe, hero], :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+
+    <div><%= hero.name %></div>
+    <div><%= hero.parent %></div>
+    <div><%= hero.child %></div>
+    <div><%= hero.description %></div>
+    <div><%= hero.is_approved %></div>
+    <div><%= hero.is_cannon %></div>
+    <div><%= hero.up_vote %></div>
+    <div><%= hero.universe.title %></div>
+    <div><%= link_to 'Show', [hero.universe, hero] %></div>
+    <div><%= link_to 'Edit', edit_universe_hero_path(hero.universe, hero) %></div>
+    <div><%= link_to 'Destroy', [hero.universe, hero], :confirm => 'Are you sure?', :method => :delete %></div>
+
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Hero', new_universe_hero_path(params[:universe_id]) %>
-<%= link_to 'Back to Universe Page', universe_path(params[:universe_id]) %>
