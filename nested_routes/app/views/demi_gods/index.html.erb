@@ -21,31 +21,28 @@
     <h1 class="title-right">Existing Demi-Gods</h1>
 </div>
 
-
-
 <div class="container">
-  <% @demi_gods.each do |demi_god| %>
+    <% @demi_gods.each do |demi_god| %>
 
-<div class="card">
-  <div class="card-content">
-    <div class="card-content__title"><%= demi_god.name %></div>
-    <div class="card-content__item"><%= demi_god.parent %></div>
-    <div class="card-content__item"><%= demi_god.child %></div>
+    <div class="card">
+        <div class="card-content">
+            <div class="card-content__title"><%= demi_god.name %></div>
+            <div class="card-content__item"><%= demi_god.parent %></div>
+            <div class="card-content__item"><%= demi_god.child %></div>
 
+            <div class="card-content__item"><%= demi_god.is_cannon %></div>
+            <div class="card-content__item"><%= demi_god.up_vote %></div>
+            <div class="card-content__item"><%= demi_god.universe.title %></div>
+            <div class="card-content__text"><%= demi_god.description %></div>
 
-    <div class="card-content__item"><%= demi_god.is_cannon %></div>
-    <div class="card-content__item"><%= demi_god.up_vote %></div>
-    <div class="card-content__item"><%= demi_god.universe.title %></div>
-    <div class="card-content__text"><%= demi_god.description %></div>
-
-    <div class="button-box">
-      <div class="new-link"><%= link_to 'Edit', edit_universe_demi_god_path(demi_god.universe, demi_god) %></div>
-      <div class="new-link"><%= link_to 'Destroy', [demi_god.universe, demi_god], :confirm => 'Are you sure?', :method => :delete %></div>
+            <div class="button-box">
+                <div class="new-link"><%= link_to 'Edit', edit_universe_demi_god_path(demi_god.universe, demi_god) %></div>
+                <div class="new-link"><%= link_to 'Destroy', [demi_god.universe, demi_god], :confirm => 'Are you sure?', :method => :delete %></div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
-  <% end %>
+    <% end %>
 </div>
 
 <!-- <%= link_to 'New Demi god', new_universe_demi_god_path(params[:universe_id]) %> -->
