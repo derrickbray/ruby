@@ -1,46 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @demi_god.name %>
-</p>
-
-<p>
-  <b>Parent:</b>
-  <%= @demi_god.parent %>
-</p>
-
-<p>
-  <b>Child:</b>
-  <%= @demi_god.child %>
-</p>
-
-
-<p>
-  <b>Description:</b>
-  <%= @demi_god.description %>
-</p>
-
-<p>
-  <b>Is approved:</b>
-  <%= @demi_god.is_approved %>
-</p>
-
-<p>
-  <b>Is cannon:</b>
-  <%= @demi_god.is_cannon %>
-</p>
-
-<p>
-  <b>Up vote:</b>
-  <%= @demi_god.up_vote %>
-</p>
-
-<p>
-  <b>Universe:</b>
-  <%= @demi_god.universe.title %>
-</p>
-
-
-<%= link_to 'Edit', edit_universe_demi_god_path(@demi_god.universe, @demi_god) %> |
-<%= link_to 'Back', universe_demi_gods_path(@demi_god.universe) %>
+<div class="container">
+    <div class="card">
+        <div class="card-content">
+          <div class="card-content__title"><%= @demi_god.universe.title %></div>
+          <div class="card-content__title"><%= @demi_god.name %></div>
+          <div class="card-content__item">Parents: <%= @demi_god.parent %></div>
+          <div class="card-content__item">Children: <%= @demi_god.child %></div>
+          <div class="card-content__checkbox">Votes: <%= @demi_god.up_vote %></div>
+          <div class="card-content__checkbox">Cannon: <%= @demi_god.is_cannon %></div>
+          <div class="card-content__text"><%= @demi_god.description %></div>
+          <div class="button-box">
+              <%= link_to 'Edit', edit_universe_demi_god_path(@demi_god.universe, @demi_god), class:'new-link' %>
+              <%= link_to 'Back', universe_demi_gods_path(@demi_god.universe), class:'new-link' %></div>
+        </div>
+    </div>
+</div>

@@ -1,39 +1,51 @@
-<h1>Listing demi_gods</h1>
+<div class="demi-hero">
+    <h1 class="title-right">The Demi-Gods of
+        <%= @universe.title %></h1>
+</div>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Parent</th>
-    <th>Child</th>
-    <th>Attribute</th>
-    <th>Description</th>
-    <th>Is approved</th>
-    <th>Is cannon</th>
-    <th>Up vote</th>
-    <th>Universe</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<section class="about">
+    <div class="container">
+        <div class="about-content">
+            <h1 class="about-content__title">Demi-Gods</h1>
+            <div class="about-content__description">Here you can create new Demi-Gods in your chosen Universe. Scroll down and see what other Demi-Gods are here.
+            </div>
+            <div class="button-box">
+                <div class="new-link"><%= link_to 'Create New Demi-Gods', new_universe_demi_god_path(params[:universe_id]) %></div>
+                <div class="new-link"><%= link_to 'Back to Universe Page', universe_path(params[:universe_id]) %></div>
+            </div>
+        </div>
+    </div>
+</section>
 
-<% @demi_gods.each do |demi_god| %>
-  <tr>
-    <td><%= demi_god.name %></td>
-    <td><%= demi_god.parent %></td>
-    <td><%= demi_god.child %></td>
+<div class="demi-hero2">
+    <h1 class="title-right">Existing Demi-Gods</h1>
+</div>
 
-    <td><%= demi_god.description %></td>
-    <td><%= demi_god.is_approved %></td>
-    <td><%= demi_god.is_cannon %></td>
-    <td><%= demi_god.up_vote %></td>
-    <td><%= demi_god.universe.title %></td>
-    <td><%= link_to 'Show', [demi_god.universe, demi_god] %></td>
-    <td><%= link_to 'Edit', edit_universe_demi_god_path(demi_god.universe, demi_god) %></td>
-    <td><%= link_to 'Destroy', [demi_god.universe, demi_god], :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
 
-<br />
 
-<%= link_to 'New Demi god', new_universe_demi_god_path(params[:universe_id]) %>
+<div class="container">
+  <% @demi_gods.each do |demi_god| %>
+
+<div class="card">
+  <div class="card-content">
+    <div class="card-content__title"><%= demi_god.name %></div>
+    <div class="card-content__item"><%= demi_god.parent %></div>
+    <div class="card-content__item"><%= demi_god.child %></div>
+
+
+    <div class="card-content__item"><%= demi_god.is_cannon %></div>
+    <div class="card-content__item"><%= demi_god.up_vote %></div>
+    <div class="card-content__item"><%= demi_god.universe.title %></div>
+    <div class="card-content__text"><%= demi_god.description %></div>
+
+    <div class="button-box">
+      <div class="new-link"><%= link_to 'Edit', edit_universe_demi_god_path(demi_god.universe, demi_god) %></div>
+      <div class="new-link"><%= link_to 'Destroy', [demi_god.universe, demi_god], :confirm => 'Are you sure?', :method => :delete %></div>
+    </div>
+  </div>
+</div>
+
+  <% end %>
+</div>
+
+<!-- <%= link_to 'New Demi god', new_universe_demi_god_path(params[:universe_id]) %> -->
