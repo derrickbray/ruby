@@ -74,3 +74,16 @@
   background-repeat: no-repeat;
   text-align: right;
 }
+
+.god-hero {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  height: 70vh;
+  padding-top: 3rem;
+  background-image: url('/images/penn.jpg');
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  text-align: right;
+}
