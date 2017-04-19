@@ -1,7 +1,7 @@
 <div class="hero-hero">
-  <h1 class="title-right">The Heroes of <%= @universe.title %></h1>
+    <h1 class="title-right">The Heroes of
+        <%= @universe.title %></h1>
 </div>
-
 
 <section class="about">
     <div class="container">
@@ -10,26 +10,37 @@
             <div class="about-content__description">Here you can create new Heroes in your chosen Universe. Scroll down and see what other heroes are here.
             </div>
             <div class="button-box">
-              <div class="new-link"><%= link_to 'New Hero', new_universe_hero_path(params[:universe_id]) %></div>
-              <div class="new-link"><%= link_to 'Back to Universe Page', universe_path(params[:universe_id]) %></div>
+                <div class="new-link"><%= link_to 'New Hero', new_universe_hero_path(params[:universe_id]) %></div>
+                <div class="new-link"><%= link_to 'Back to Universe Page', universe_path(params[:universe_id]) %></div>
             </div>
 
         </div>
     </div>
 </section>
 
-<% @heros.each do |hero| %>
+<div class="hero-hero2">
+    <h1 class="title-right">Existing Heroes</h1>
+</div>
 
-    <div><%= hero.name %></div>
-    <div><%= hero.parent %></div>
-    <div><%= hero.child %></div>
-    <div><%= hero.description %></div>
-    <div><%= hero.is_approved %></div>
-    <div><%= hero.is_cannon %></div>
-    <div><%= hero.up_vote %></div>
-    <div><%= hero.universe.title %></div>
-    <div><%= link_to 'Show', [hero.universe, hero] %></div>
-    <div><%= link_to 'Edit', edit_universe_hero_path(hero.universe, hero) %></div>
-    <div><%= link_to 'Destroy', [hero.universe, hero], :confirm => 'Are you sure?', :method => :delete %></div>
+<div class="container">
+  <% @heros.each do |hero| %>
 
-<% end %>
+    <div class="card">
+        <div class="card-content">
+            <div class="card-content__title"><%= hero.name %></div>
+            <div class="card-content__item">Parents: <%= hero.parent %></div>
+            <div class="card-content__item">Children: <%= hero.child %></div>
+            <!-- <div class="card-content__item"><%= hero.is_approved %></div> -->
+            <div class="card-content__item">Cannon: <%= hero.is_cannon %></div>
+            <div class="card-content__item">Vote: <%= hero.up_vote %></div>
+            <div class="card-content__item">Universe: <%= hero.universe.title %></div>
+            <div class="card-content__text"><%= hero.description %></div>
+            <div class="button-box">
+              <div class="new-link"><%= link_to 'Edit', edit_universe_hero_path(hero.universe, hero) %></div>
+              <div class="new-link"><%= link_to 'Destroy', [hero.universe, hero], :confirm => 'Are you sure?', :method => :delete %></div>
+            </div>
+        </div>
+    </div>
+
+  <% end %>
+</div>
