@@ -1,38 +1,47 @@
-<h1>Listing gods</h1>
+<div class="god-hero">
+    <h1 class="title-right">The Gods of
+        <%= @universe.title %></h1>
+</div>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Parent</th>
-    <th>Child</th>
-    <th>Attribute</th>
-    <th>Description</th>
-    <th>Is approved</th>
-    <th>Is cannon</th>
-    <th>Up vote</th>
-    <th>Universe</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<section class="about">
+    <div class="container">
+        <div class="about-content">
+            <h1 class="about-content__title">Gods</h1>
+            <div class="about-content__description">Here you can create new Gods in your chosen Universe. Scroll down and see what other Gods are here.
+            </div>
+            <div class="button-box">
+                <div class="new-link"><%= link_to 'Create New Gods', new_universe_god_path(params[:universe_id]) %></div>
+                <div class="new-link"><%= link_to 'Back to Universe Page', universe_path(params[:universe_id]) %></div>
+            </div>
 
-<% @gods.each do |god| %>
-  <tr>
-    <td><%= god.name %></td>
-    <td><%= god.parent %></td>
-    <td><%= god.child %></td>
-    <td><%= god.description %></td>
-    <td><%= god.is_approved %></td>
-    <td><%= god.is_cannon %></td>
-    <td><%= god.up_vote %></td>
-    <td><%= god.universe.title %></td>
-    <td><%= link_to 'Show', [god.universe, god] %></td>
-    <td><%= link_to 'Edit', edit_universe_god_path(god.universe, god) %></td>
-    <td><%= link_to 'Destroy', [god.universe, god], :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+        </div>
+    </div>
+</section>
 
-<br />
+<div class="god-hero2">
+    <h1 class="title-right">Existing Gods</h1>
+</div>
+
+<div class="container">
+    <% @gods.each do |god| %>
+
+    <div class="card">
+        <div class="card-content">
+            <div class="card-content__title"><%= god.name %></div>
+            <div class="card-content__item">Parents: <%= god.parent %></div>
+            <div class="card-content__item">Children: <%= god.child %></div>
+            <!-- <div class="card-content__item"><%= god.is_approved %></div> -->
+            <div class="card-content__item">CAnnon: <%= god.is_cannon %></div>
+            <div class="card-content__item">Vote: <%= god.up_vote %></div>
+            <div class="card-content__item">Universe: <%= god.universe.title %></div>
+            <div class="card-content__text"><%= god.description %></div>
+            <div class="button-box">
+              <div class="new-link"><%= link_to 'Edit', edit_universe_god_path(god.universe, god) %></div>
+              <div class="new-link"><%= link_to 'Destroy', [god.universe, god], :confirm => 'Are you sure?', :method => :delete %></div>
+            </div>
+        </div>
+    </div>
+    <% end %>
+</div>
 
 <%= link_to 'New God', new_universe_god_path(params[:universe_id]) %>

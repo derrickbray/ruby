@@ -1,46 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @god.name %>
-</p>
+<div class="container">
+    <div class="card">
+        <div class="card-content">
 
-<p>
-  <b>Parent:</b>
-  <%= @god.parent %>
-</p>
+            <div class="card-content__title"><%= @god.universe.title %></div>
+            <div class="card-content__title"><%= @god.name %></div>
+            <div class="card-content__item">Parents: <%= @god.parent %></div>
+            <div class="card-content__item">Children: <%= @god.child %></div>
+            <!-- <div class="card-content__checkbox"><%= @god.is_approved %></div> -->
+            <div class="card-content__checkbox">CAnnon: <%= @god.is_cannon %></div>
+            <div class="card-content__checkbox">Votes: <%= @god.up_vote %></div>
+            <div class="card-content__text"><%= @god.description %></div>
 
-<p>
-  <b>Child:</b>
-  <%= @god.child %>
-</p>
-
-
-<p>
-  <b>Description:</b>
-  <%= @god.description %>
-</p>
-
-<p>
-  <b>Is approved:</b>
-  <%= @god.is_approved %>
-</p>
-
-<p>
-  <b>Is cannon:</b>
-  <%= @god.is_cannon %>
-</p>
-
-<p>
-  <b>Up vote:</b>
-  <%= @god.up_vote %>
-</p>
-
-<p>
-  <b>Universe:</b>
-  <%= @god.universe.title %>
-</p>
-
-
-<%= link_to 'Edit', edit_universe_god_path(@god.universe, @god) %> |
-<%= link_to 'Back', universe_gods_path(@god.universe) %>
+            <div class="button-box">
+                <%= link_to 'Edit Again', edit_universe_god_path(@god.universe, @god), class:'new-link' %>
+                <%= link_to 'Back', universe_gods_path(@god.universe), class:'new-link' %>
+            </div>
+        </div>
+    </div>
+</div>

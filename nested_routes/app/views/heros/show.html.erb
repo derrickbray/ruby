@@ -1,50 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @hero.name %>
-</p>
+<div class="container">
+    <div class="card">
+        <div class="card-content">
 
-<p>
-  <b>Parent:</b>
-  <%= @hero.parent %>
-</p>
+            <div class="card-content__title"><%= @hero.universe.title %></div>
+            <div class="card-content__title"><%= @hero.name %></div>
+            <div class="card-content__item">Parents: <%= @hero.parent %></div>
+            <div class="card-content__item">Children: <%= @hero.child %></div>
+            <!-- <div class="card-content__checkbox"><%= @hero.is_approved %></div> -->
+            <div class="card-content__checkbox">CAnnon: <%= @hero.is_cannon %></div>
+            <div class="card-content__checkbox">Votes: <%= @hero.up_vote %></div>
+            <div class="card-content__text"><%= @hero.description %></div>
 
-<p>
-  <b>Child:</b>
-  <%= @hero.child %>
-</p>
-
-<!-- <p>
-  <b>Attribute:</b>
-  <%= @hero.attributes %>
-</p> -->
-
-<p>
-  <b>Description:</b>
-  <%= @hero.description %>
-</p>
-
-<p>
-  <b>Is approved:</b>
-  <%= @hero.is_approved %>
-</p>
-
-<p>
-  <b>Is cannon:</b>
-  <%= @hero.is_cannon %>
-</p>
-
-<p>
-  <b>Up vote:</b>
-  <%= @hero.up_vote %>
-</p>
-
-<p>
-  <b>Universe:</b>
-  <%= @hero.universe.title %>
-</p>
-
-
-<%= link_to 'Edit', edit_universe_hero_path(@hero.universe, @hero) %> |
-<%= link_to 'Back', universe_heros_path(@hero.universe) %>
+            <div class="button-box">
+                <%= link_to 'Edit', edit_universe_hero_path(@hero.universe, @hero), class:'new-link' %>
+                <%= link_to 'Back', universe_heros_path(@hero.universe), class:'new-link' %>
+            </div>
+        </div>
+    </div>
+</div>
