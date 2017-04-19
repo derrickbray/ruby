@@ -21,12 +21,11 @@
     <td><%= god.name %></td>
     <td><%= god.parent %></td>
     <td><%= god.child %></td>
-    <td><%= god.attribute %></td>
     <td><%= god.description %></td>
     <td><%= god.is_approved %></td>
     <td><%= god.is_cannon %></td>
     <td><%= god.up_vote %></td>
-    <td><%= god.universe %></td>
+    <td><%= god.universe.title %></td>
     <td><%= link_to 'Show', [god.universe, god] %></td>
     <td><%= link_to 'Edit', edit_universe_god_path(god.universe, god) %></td>
     <td><%= link_to 'Destroy', [god.universe, god], :confirm => 'Are you sure?', :method => :delete %></td>

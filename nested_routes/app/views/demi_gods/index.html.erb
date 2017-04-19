@@ -21,12 +21,12 @@
     <td><%= demi_god.name %></td>
     <td><%= demi_god.parent %></td>
     <td><%= demi_god.child %></td>
-    <td><%= demi_god.attribute %></td>
+
     <td><%= demi_god.description %></td>
     <td><%= demi_god.is_approved %></td>
     <td><%= demi_god.is_cannon %></td>
     <td><%= demi_god.up_vote %></td>
-    <td><%= demi_god.universe %></td>
+    <td><%= demi_god.universe.title %></td>
     <td><%= link_to 'Show', [demi_god.universe, demi_god] %></td>
     <td><%= link_to 'Edit', edit_universe_demi_god_path(demi_god.universe, demi_god) %></td>
     <td><%= link_to 'Destroy', [demi_god.universe, demi_god], :confirm => 'Are you sure?', :method => :delete %></td>
